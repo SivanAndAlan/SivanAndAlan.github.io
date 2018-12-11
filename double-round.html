@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html dir="rtl">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="general.css" media="screen" />
+        <title>מסיבת רווקות סיון</title>
+        <script>
+        var looper;
+        var degrees = 0;
+        function rotateAnimation(el, speed){
+            var elem = document.getElementById(el);
+            if(navigator.userAgent.match("Chrome")){
+                elem.style.WebkitTransform = "rotate("+degrees+"deg)";
+            } else if(navigator.userAgent.match("Firefox")){
+                elem.style.MozTransform = "rotate("+degrees+"deg)";
+            } else if(navigator.userAgent.match("MSIE")){
+                elem.style.msTransform = "rotate("+degrees+"deg)";
+            } else if(navigator.userAgent.match("Opera")){
+                elem.style.OTransform = "rotate("+degrees+"deg)";
+            } else {
+                elem.style.transform = "rotate("+degrees+"deg)";
+            }
+            looper = setTimeout('rotateAnimation(\''+el+'\','+speed+')',speed);
+            degrees++;
+            if(degrees > 359){
+                degrees = 1;
+            }
+            document.getElementById("status").innerHTML = "rotate("+degrees+"deg)";
+        }
+        </script>
+    </head>
+    <body align='center'>
+        </br>
+        <h1><b><font size="8" face="Arial">מסיבת רווקות סיון חטמבליאנסקי</font></b></h1>
+        <img src="banner.png" alt="Banner" width="500" height="200" /></br></br></br></br>
+        <font size="7" face="Arial">סיבוב כפול!</font>
+        </br></br></br>
+        <iframe src="double-round.mp3" allow="autoplay" style="display:none" id="iframeAudio"></iframe>
+        <img id="double-round.png" src="double-round.png" alt="Light bulb" width="150" height="100" onload='rotateAnimation(this.id, 20);'/>
+        <font size="5" face="Arial">
+            </br></br></br>
+            <a href="37.html" class="next">&laquo; Next</a>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="36.html" class="previous">Previous &raquo;</a>
+        </font>
+    </body>
+</html>
